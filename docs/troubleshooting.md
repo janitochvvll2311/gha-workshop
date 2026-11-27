@@ -16,6 +16,19 @@ En Windows, comprueba que Docker Desktop usa contenedores Linux.
 
 Instala Docker Desktop o Docker Engine y vuelve a abrir la terminal.
 
+### Git Bash usa un Docker CLI que apunta a `/var/run/docker.sock`
+
+En Windows, Git Bash puede encontrar primero un cliente Linux. Usa el binario de
+Windows:
+
+```bash
+docker.exe info
+docker.exe build -f docker/runner.Dockerfile -t gha-runner-lab:1 .
+```
+
+O ejecuta desde PowerShell. `scripts/preflight.sh` y `scripts/local-ci.sh`
+detectan el caso y cambian a `docker.exe` automáticamente.
+
 ### El build tarda mucho o falla por red
 
 - Verifica la conexión.

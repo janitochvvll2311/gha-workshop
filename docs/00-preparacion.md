@@ -48,6 +48,11 @@ gh auth status
 gh act --version
 ```
 
+> En Git Bash para Windows, `docker` puede resolver a un cliente Linux que
+> apunta a `/var/run/docker.sock`. Si `docker info` falla, usa `docker.exe info`
+> o ejecuta los comandos de Docker desde PowerShell. Los scripts del taller
+> detectan este caso automáticamente.
+
 Valores esperados en el entorno de referencia:
 
 - Bun `1.4.4`

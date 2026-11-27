@@ -40,10 +40,13 @@ El repositorio incluye `.actrc`:
 ```text
 -P ubuntu-latest=gha-act-runner:1
 --pull=false
+--bind
 ```
 
 - `-P` mapea `ubuntu-latest` a nuestra imagen local.
 - `--pull=false` evita descargar otra imagen.
+- `--bind` monta el workspace local en el contenedor. Es necesario en Windows
+  con Docker Desktop y también evita copiar el repositorio en cada ejecución.
 
 Verifica que la imagen existe:
 

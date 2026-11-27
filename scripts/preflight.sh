@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+DOCKER="${DOCKER:-docker}"
+
+if ! "$DOCKER" info >/dev/null 2>&1 && command -v docker.exe >/dev/null 2>&1; then
+  DOCKER="docker.exe"
+fi
+
 echo "==> Verificando herramientas"
 
 for command in bun git docker gh; do
@@ -11,7 +17,7 @@ for command in bun git docker gh; do
   echo "  ✓ $command"
 done
 
-docker info >/dev/null
+"$DOCKER" info >/dev/null
 echo "  ✓ Docker daemon"
 gh auth status
 echo "  ✓ gh autenticado"
@@ -24,8 +30,8 @@ fi
 gh act --version
 
 echo "==> Descargando imágenes base"
-docker pull ubuntu:24.04
-docker pull oven/bun:1.4.4-slim
-docker pull catthehacker/ubuntu:act-latest
+"$DOCKER" pull ubuntu:24.04
+"$DOCKER" pull oven/bun:1.4.4-slim
+"$DOCKER" pull catthehacker/ubuntu:act-latest
 
 echo "==> Preflight completado"
