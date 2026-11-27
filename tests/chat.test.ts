@@ -28,7 +28,7 @@ describe("validateMessage", () => {
 
 describe("generateReply", () => {
   test("responde a un saludo", () => {
-    expect(generateReply("Hola")).toContain("bot de práctica");
+    expect(generateReply("Hola")).toContain("texto que no existe");
   });
 
   test("/ayuda lista los comandos disponibles", () => {
