@@ -2,20 +2,33 @@
 set -euo pipefail
 
 DOCKER="${DOCKER:-docker}"
+BUN="${BUN:-bun}"
 
 if ! "$DOCKER" info >/dev/null 2>&1 && command -v docker.exe >/dev/null 2>&1; then
   DOCKER="docker.exe"
 fi
 
+if ! command -v "$BUN" >/dev/null 2>&1 && command -v bun.exe >/dev/null 2>&1; then
+  BUN="bun.exe"
+fi
+
 echo "==> Verificando herramientas"
 
-for command in bun git docker gh; do
+for command in git gh; do
   if ! command -v "$command" >/dev/null 2>&1; then
     echo "Falta la herramienta: $command" >&2
     exit 1
   fi
   echo "  ✓ $command"
 done
+
+if ! command -v "$BUN" >/dev/null 2>&1; then
+  echo "Falta la herramienta: bun" >&2
+  exit 1
+fi
+
+echo "  ✓ bun ($BUN)"
+"$BUN" --version
 
 "$DOCKER" info >/dev/null
 echo "  ✓ Docker daemon"

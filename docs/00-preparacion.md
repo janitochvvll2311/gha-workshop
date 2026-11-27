@@ -52,6 +52,9 @@ gh act --version
 > apunta a `/var/run/docker.sock`. Si `docker info` falla, usa `docker.exe info`
 > o ejecuta los comandos de Docker desde PowerShell. Los scripts del taller
 > detectan este caso automáticamente.
+>
+> Lo mismo puede pasar con Bun: si `bun --version` no funciona en Git Bash,
+> prueba `bun.exe --version`. `scripts/preflight.sh` también lo detecta.
 
 Valores esperados en el entorno de referencia:
 
