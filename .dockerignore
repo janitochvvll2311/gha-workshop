@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+docs
+tests
+scripts
+docker
+coverage
+dist
+*.md
+.env
+.env.*
+*.log

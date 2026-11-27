@@ -1,0 +1,19 @@
+{
+  "name": "gha-workshop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chat simulado para el taller de GitHub Actions",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.5",
+    "typescript": "^7.0.2"
+  }
+}

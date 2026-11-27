@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Chat simulado para el taller de GitHub Actions con Bun."
+    />
+    <title>GHA Workshop · Chat simulado</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <h1>GHA Workshop</h1>
+            <p>Chat simulado · Bun + GitHub Actions</p>
+          </div>
+        </div>
+        <span class="badge">demo</span>
+      </header>
+
+      <section
+        id="messages"
+        class="messages"
+        aria-live="polite"
+        aria-label="Conversación"
+      >
+        <article class="message bot">
+          <div class="avatar" aria-hidden="true">B</div>
+          <div class="bubble">
+            <p>
+              ¡Hola! Soy un bot simulado. No hay una IA detrás: mis respuestas
+              son deterministas para que los tests sean reproducibles.
+            </p>
+            <p class="hint">
+              Prueba <code>/ayuda</code>, <code>/chiste</code> o
+              <code>/echo hola CI</code>.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message">Mensaje</label>
+        <input
+          id="message"
+          name="message"
+          type="text"
+          maxlength="500"
+          autocomplete="off"
+          placeholder="Escribe un mensaje..."
+          required
+        />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

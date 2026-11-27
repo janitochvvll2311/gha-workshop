@@ -1,0 +1,3 @@
+-P ubuntu-latest=gha-act-runner:1
+--pull=false
+--bind
