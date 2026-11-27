@@ -26,7 +26,7 @@ también un ejemplo de CI seguro para un proyecto público.
    bash scripts/local-ci.sh
    ```
 
-5. Abre un Pull Request contra `main` y espera el check `CI / Test (Bun)`.
+5. Abre un Pull Request contra `main` y espera el check `Test (Bun)`.
 
 ## Reglas del proyecto
 

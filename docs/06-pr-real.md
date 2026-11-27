@@ -6,7 +6,7 @@ comprobar un fallo controlado y proteger `main` para que no se mergee sin CI.
 
 ## Antes de empezar
 
-El workflow final debe estar en `main` y el check `CI / Test (Bun)` debe haber
+El workflow final debe estar en `main` y el check `Test (Bun)` debe haber
 corrido al menos una vez. Si acabas de crear el repositorio, espera a que el
 primer run termine en verde.
 
@@ -43,11 +43,14 @@ O abre el PR desde la interfaz de GitHub.
 
 En el PR observa:
 
-- El check `CI / Test (Bun)`.
+- El check `Test (Bun)`.
 - La pestaña **Checks**.
 - Los logs por step.
 - La duración.
 - El resumen del job.
+
+> `gh pr checks` muestra el nombre del job: `Test (Bun)`. En la interfaz de
+> GitHub puede aparecer junto al workflow como `CI / Test (Bun)`.
 
 Espera el resultado:
 
@@ -101,7 +104,7 @@ Configura una **ruleset** o branch protection. En la interfaz:
    - **Require status checks to pass**.
    - **Require branches to be up to date before merging**.
    - **Require linear history** (opcional, recomendado con squash).
-6. En status checks, selecciona `CI / Test (Bun)`.
+6. En status checks, selecciona `Test (Bun)`.
 7. Aprobaciones requeridas: `0` para un repositorio personal, `1` si habrá
    revisión de otra persona.
 8. Guarda la ruleset.
@@ -144,7 +147,7 @@ necesita checkout: eso puede dar acceso a secretos a código no confiable.
 
 ## Checkpoint
 
-- [ ] El PR ejecuta `CI / Test (Bun)`.
+- [ ] El PR ejecuta `Test (Bun)`.
 - [ ] El check verde permite merge.
 - [ ] Un test roto bloquea el merge.
 - [ ] `main` rechaza pushes directos.

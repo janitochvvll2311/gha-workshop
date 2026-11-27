@@ -170,7 +170,8 @@ Comprueba:
 ### El check no aparece para branch protection
 
 El check debe haber corrido al menos una vez. Abre un PR, espera el run y vuelve
-a la configuración. El nombre exacto suele ser `CI / Test (Bun)`.
+a la configuración. El nombre exacto suele ser `Test (Bun)`; en la interfaz
+puede aparecer como `CI / Test (Bun)`.
 
 ### `Resource not accessible by integration`
 
