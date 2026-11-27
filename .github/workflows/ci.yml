@@ -12,5 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Ejecutar receta de tests
-        run: bash ./scripts/ci-steps.sh
+      - name: Instalar dependencias
+        run: bun install --frozen-lockfile
+
+      - name: Verificar tipos
+        run: bun run typecheck
+
+      - name: Ejecutar tests
+        run: bun test
