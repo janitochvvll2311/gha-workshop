@@ -63,6 +63,7 @@ Duración: **3 h 20 min de contenido + buffer**, máximo 4 horas.
 Material de apoyo:
 
 - [Planificación del taller](docs/planificacion.md)
+- [Verificación end-to-end](docs/verificacion.md)
 - [Solución de problemas](docs/troubleshooting.md)
 - [Guía del facilitador](docs/facilitator.md)
 - [Contribuir](CONTRIBUTING.md)
