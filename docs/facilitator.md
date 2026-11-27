@@ -110,6 +110,13 @@ Tags disponibles:
 No permitas que un equipo se quede 20 minutos en un error de entorno. Usa el tag
 y sigue; al final se resuelve en grupo.
 
+Los tags son checkpoints históricos. Si un equipo usa un tag anterior en Windows
+con Git Bash y `local-ci.sh` no encuentra el daemon, ejecuta:
+
+```bash
+DOCKER=docker.exe bash scripts/local-ci.sh
+```
+
 ## Dinámica
 
 - Parejas: una persona conduce, otra lee y verifica.

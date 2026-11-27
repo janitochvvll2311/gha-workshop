@@ -73,6 +73,13 @@ Desde la raíz del repositorio:
 bash scripts/local-ci.sh
 ```
 
+> En Windows con Git Bash, el script detecta si `docker` apunta a un socket
+> Linux y cambia a `docker.exe`. Si tu instalación es diferente, prueba:
+>
+> ```bash
+> DOCKER=docker.exe bash scripts/local-ci.sh
+> ```
+
 Salida esperada, resumida:
 
 ```text

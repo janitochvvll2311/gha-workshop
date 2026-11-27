@@ -56,6 +56,13 @@ docker image inspect gha-act-runner:1 >/dev/null && echo "imagen lista"
 
 ## Workflow de esta fase
 
+`main` está protegida: si vas a modificar el workflow y hacer push, crea una
+rama de trabajo:
+
+```bash
+git switch -c taller/fase-3
+```
+
 Si estás siguiendo el taller desde un tag:
 
 ```bash

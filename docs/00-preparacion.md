@@ -84,6 +84,12 @@ Si trabajas desde un fork, usa tu URL:
 git clone https://github.com/TU_USUARIO/gha-workshop.git
 ```
 
+> `main` está protegida. Para probar cambios, crea una rama:
+>
+> ```bash
+> git switch -c taller/mi-prueba
+> ```
+
 ## Primer contacto con la app
 
 ```bash
