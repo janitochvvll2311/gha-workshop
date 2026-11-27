@@ -11,6 +11,7 @@ if (!Number.isInteger(port) || port < 1 || port > 65535) {
 const server = Bun.serve({
   port,
   hostname,
+  maxRequestBodySize: 16 * 1024,
   fetch: createHandler(),
 });
 
