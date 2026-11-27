@@ -10,7 +10,7 @@ Registro de la validación end-to-end realizada al crear el repositorio.
 - Docker `29.6.2`
 - Git `2.47.0`
 - GitHub CLI `2.93.0`
-- `gh act` con `act` `0.2.88`
+- `gh act` con `act` `0.2.98` (la validación inicial se hizo con `0.2.88`)
 - Windows 11 + Docker Desktop con contenedores Linux
 
 ## Resultados
@@ -26,7 +26,10 @@ Registro de la validación end-to-end realizada al crear el repositorio.
 | `bash scripts/local-ci.sh` | OK en un contenedor limpio |
 | `gh act workflow_dispatch -j test` | OK |
 | CI en `main` | OK |
-| Ruleset `main-protection` | Activa |
+| PR #1 con CI verde | Mergeado |
+| PR #2 con test roto | Bloqueado y cerrado |
+| Push directo a `main` | Rechazado por la ruleset |
+| Ruleset `main-protection` | Activa, check `Test (Bun)` |
 | Secret scanning + push protection | Activos |
 | Dependabot | Activo |
 
@@ -80,5 +83,7 @@ jobs:
 - El check requerido por la ruleset es `Test (Bun)`, el nombre del job.
 - En la interfaz de Pull Requests, GitHub puede mostrarlo junto al workflow,
   por ejemplo `CI / Test (Bun)`.
+- El PR #2 se usó para comprobar el bloqueo: el check falló, el merge quedó en
+  `BLOCKED` y el PR se cerró sin mergear.
 - Las acciones están fijadas por SHA completo.
 - No se usan secretos ni runners self-hosted.
